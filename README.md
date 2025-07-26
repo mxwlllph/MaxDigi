@@ -1,4 +1,4 @@
-# Pustaka MaxDigi untuk Integrasi API DigiFlazz pada Laravel
+# MaxDigi - Integrasi API DigiFlazz pada Laravel
 
 ## Pendahuluan
 
@@ -231,6 +231,17 @@ class BalanceController extends Controller
     }
 }
 ```
+## Arsitektur Internal & Catatan Pengembang
+
+Bagian ini ditujukan bagi para pengembang yang ingin memahami cara kerja internal pustaka atau berkontribusi.
+
+### Penanganan Route Otomatis
+
+Pustaka ini secara otomatis mendaftarkan *endpoint* yang diperlukan untuk menerima *webhook* dari DigiFlazz. *Endpoint* ini adalah `POST /api/maxdigi/webhook`.
+
+Anda **tidak perlu** menambahkan *route* ini secara manual ke dalam file `routes/api.php` atau `routes/web.php` pada aplikasi Anda.
+
+Proses pendaftaran ini dikelola oleh `MaxDigiServiceProvider`, yang memuat file *route* dari dalam direktori pustaka itu sendiri menggunakan metode `loadRoutesFrom`. Hal ini memastikan bahwa pustaka bersifat *self-contained* (mandiri) dan proses instalasi tetap sederhana bagi pengguna.
 
 ## Lisensi
 
