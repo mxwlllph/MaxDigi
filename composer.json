@@ -1,0 +1,38 @@
+{
+    "name": "mxwlllph/maxdigi",
+    "description": "A Laravel wrapper for the DigiFlazz API with async jobs and webhook handling.",
+    "keywords": ["laravel", "digiflazz", "api", "wrapper"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maxwell Alpha",
+            "email": "mxwllalpha@gmail.com",
+            "homepage": "https://github.com/mxwlllph"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/contracts": "^9.0|^10.0|^11.0",
+        "illuminate/http": "^9.0|^10.0|^11.0",
+        "illuminate/support": "^9.0|^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mxwlllph\\MaxDigi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mxwlllph\\MaxDigi\\MaxDigiServiceProvider"
+            ],
+            "aliases": {
+                "MaxDigi": "Mxwlllph\\MaxDigi\\Facades\\MaxDigi"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
